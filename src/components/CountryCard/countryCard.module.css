@@ -1,0 +1,29 @@
+.countryCard {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  color: var(--text-color);
+  width: 100%;
+  max-width: 320px;
+}
+
+.countryCardImg {
+  width: 100%;
+  max-width: 320px;
+  height: 168px;
+  border-radius: 8px 8px 0 0;
+}
+
+.countryCardContent {
+  padding: 2rem;
+}
+
+.countryCardTitle {
+  margin: 1rem 0 0.5rem;
+}
+
+.countryCardText {
+  margin: 0.5rem 0;
+}

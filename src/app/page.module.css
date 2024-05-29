@@ -1,0 +1,4 @@
+.homePage {
+  background-color: var(--page-bg);
+  min-height: calc(100vh - 70px);
+}

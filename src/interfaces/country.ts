@@ -1,4 +1,5 @@
 export interface Country {
+  flags: any;
   name: {
     common: string;
   };

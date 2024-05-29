@@ -1,0 +1,12 @@
+.countriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  justify-content: space-between;
+}
+
+.countryCard {
+  width: 100%;
+  max-width: 320px;
+}
