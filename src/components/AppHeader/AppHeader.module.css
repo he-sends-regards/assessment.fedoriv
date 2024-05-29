@@ -1,0 +1,31 @@
+.appHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  height: 70px;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
+.appHeaderTitle {
+  font-size: 24px;
+}
+
+@media (min-width: 900px) {
+  .appHeaderTitle {
+    font-size: 28px;
+  }
+}

@@ -85,16 +85,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -104,4 +94,22 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/* Light Theme */
+:root {
+  --header-bg: #ffffff;
+  --header-text: #000000;
+  --card-bg: #ffffff;
+  --page-bg: #fafafa;
+  --text-color: #000000;
+}
+
+/* Dark Theme */
+.dark {
+  --header-bg: #2b3743;
+  --header-text: #ffffff;
+  --card-bg: #2b3743;
+  --page-bg: #202d36;
+  --text-color: #ffffff;
 }

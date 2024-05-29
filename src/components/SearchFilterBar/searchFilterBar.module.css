@@ -1,0 +1,91 @@
+.searchFilterBar {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 3rem 2rem;
+}
+
+.searchInputContainer {
+  position: relative;
+  width: 30%;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  padding-bottom: 2px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #ccc;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem 2rem 1rem 3rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 0;
+  font-size: 14px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #959595;
+}
+
+.filterSelectContainer {
+  position: relative;
+  width: 200px;
+}
+
+.filterSelect {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg);
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.dropdownMenuItem {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.dropdownMenuItem:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dropdownIcon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
