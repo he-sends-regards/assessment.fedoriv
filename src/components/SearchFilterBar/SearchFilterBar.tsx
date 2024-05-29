@@ -1,16 +1,16 @@
+// src/components/SearchFilterBar.tsx
 "use client";
 
 import {
   FC,
   memo,
   useCallback,
-  useEffect,
   useState,
   useTransition,
+  useEffect,
 } from "react";
 import { Country } from "../../interfaces/country";
 import { CountriesGrid, Loader } from "../";
-import { fetchAllCountries } from "@/services";
 import styles from "./searchFilterBar.module.css";
 import { FaSearch } from "react-icons/fa";
 
@@ -23,23 +23,14 @@ const REGIONS = [
   "Oceania",
 ];
 
-const SearchFilterBar: FC = () => {
+interface SearchFilterBarProps {
+  countries: Country[];
+}
+
+const SearchFilterBar: FC<SearchFilterBarProps> = ({ countries }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [region, setRegion] = useState("");
-  const [countries, setCountries] = useState<Country[]>([]);
   const [isPending, startTransition] = useTransition();
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleGetCountries = async () => {
-    setIsLoading(true);
-    const data = await fetchAllCountries();
-    setCountries(data);
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    handleGetCountries();
-  }, []);
 
   const filteredCountries = countries.filter(
     (country) =>
@@ -113,11 +104,7 @@ const SearchFilterBar: FC = () => {
         </div>
       </div>
 
-      {isLoading || isPending ? (
-        <Loader />
-      ) : (
-        <CountriesGrid countries={filteredCountries} />
-      )}
+      <CountriesGrid countries={filteredCountries} />
     </div>
   );
 };
