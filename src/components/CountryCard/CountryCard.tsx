@@ -15,7 +15,6 @@ const CountryCard: FC<Props> = ({ country }) => {
         alt={`${country.name.common} flag`}
         width={320}
         height={168}
-        objectFit="cover"
         className={styles.countryCardImg}
       />
 
