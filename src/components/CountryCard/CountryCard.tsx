@@ -1,15 +1,24 @@
+"use client";
+
 import { Country } from "@/interfaces";
 import React, { FC } from "react";
 import Image from "next/image";
 import styles from "./countryCard.module.css";
+import { useRouter } from "next/navigation";
 
 interface Props {
   country: Country;
 }
 
 const CountryCard: FC<Props> = ({ country }) => {
+  const router = useRouter();
+
+  const onCountryCardClick = () => {
+    router.push(`/country/${country.cca3}`);
+  };
+
   return (
-    <div className={styles.countryCard}>
+    <div className={styles.countryCard} onClick={onCountryCardClick}>
       <Image
         src={country.flags.png}
         alt={`${country.name.common} flag`}
