@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, memo, useCallback, useState, useTransition } from "react";
+import React, { FC, memo, useCallback, useState } from "react";
 import { Country } from "../../interfaces/country";
 import { CountriesGrid, SearchFilterBar } from "../";
 
@@ -11,7 +11,8 @@ interface CountriesPageProps {
 const CountriesPage: FC<CountriesPageProps> = ({ countries }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [region, setRegion] = useState("");
-  const [isPending, startTransition] = useTransition();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isPending, setIsPending] = useState(false);
 
   const filteredCountries = countries.filter(
     (country) =>
@@ -21,27 +22,25 @@ const CountriesPage: FC<CountriesPageProps> = ({ countries }) => {
 
   const handleSearchChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      startTransition(() => {
-        setSearchTerm(e.target.value);
-      });
+      setIsPending(true);
+      setSearchTerm(e.target.value);
+      setIsPending(false);
     },
     []
   );
 
-  const handleRegionChange = (region: string) => {
-    startTransition(() => {
-      setIsDropdownOpen(false);
-      if (region === "All Regions") {
-        setRegion("");
-      } else {
-        setRegion(region);
-      }
-    });
-  };
+  const handleRegionChange = useCallback((region: string) => {
+    setIsDropdownOpen(false);
+    if (region === "All Regions") {
+      setRegion("");
+    } else {
+      setRegion(region);
+    }
+  }, []);
 
-  const onFilterDropdownClick = () => setIsDropdownOpen(!isDropdownOpen);
-
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const onFilterDropdownClick = useCallback(() => {
+    setIsDropdownOpen((prev) => !prev);
+  }, []);
 
   return (
     <div>

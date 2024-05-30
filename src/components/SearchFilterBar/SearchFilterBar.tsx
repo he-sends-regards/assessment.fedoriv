@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ChangeEventHandler, FC, useState, useTransition } from "react";
+import React, { ChangeEventHandler, FC, memo } from "react";
 import styles from "./searchFilterBar.module.css";
 import { FaSearch } from "react-icons/fa";
 
@@ -43,7 +43,6 @@ const SearchFilterBar: FC<Props> = ({
           onChange={handleSearchChange}
           disabled={isPending}
           className={styles.searchInput}
-          key="searchInput"
         />
       </div>
 
@@ -76,4 +75,4 @@ const SearchFilterBar: FC<Props> = ({
   );
 };
 
-export default SearchFilterBar;
+export default memo(SearchFilterBar);
