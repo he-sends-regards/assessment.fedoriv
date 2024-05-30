@@ -1,16 +1,24 @@
 "use client";
 
-import React from "react";
+import React, { FC, useTransition } from "react";
 import styles from "./countryNotFound.module.css";
-import { useRouter } from "next/navigation";
 import { BiRefresh } from "react-icons/bi";
+import { useRouter } from "next/navigation";
+import Loader from "../Loader";
 
 const CountryNotFound = () => {
   const router = useRouter();
+  const [isPending, startTransition] = useTransition();
 
-  const handleReload = () => {
-    window.location.reload();
+  const onReloadBtnClick = () => {
+    startTransition(() => {
+      router.refresh();
+    });
   };
+
+  if (isPending) {
+    return <Loader />;
+  }
 
   return (
     <div className={styles.container}>
@@ -19,7 +27,7 @@ const CountryNotFound = () => {
         to an issue with the restcountries.com service. Please try again later.
       </span>
 
-      <button className={styles.button} onClick={handleReload}>
+      <button className={styles.button} onClick={onReloadBtnClick}>
         Reload
         <BiRefresh />
       </button>
