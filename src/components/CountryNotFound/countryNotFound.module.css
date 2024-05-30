@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.message {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--component-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

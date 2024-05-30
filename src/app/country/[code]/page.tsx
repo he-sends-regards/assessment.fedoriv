@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import BackButton from "@/components/BackButton";
 import styles from "./countryPage.module.css";
 import { fetchCountryByCode } from "@/services";
-import { CountryDetails, Loader } from "@/components";
+import { CountryDetails, CountryNotFound, Loader } from "@/components";
 
 interface CountryPageProps {
   params: {
@@ -17,11 +17,7 @@ const CountryPage = async ({ params }: CountryPageProps) => {
     <div className={styles.pageContainer}>
       <BackButton />
 
-      {country ? (
-        <CountryDetails country={country} />
-      ) : (
-        <span>Cannot find country...</span>
-      )}
+      {country ? <CountryDetails country={country} /> : <CountryNotFound />}
     </div>
   );
 };
