@@ -29,7 +29,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 0;
   font-size: 14px;
-  background: var(--card-bg);
+  background: var(--component-bg);
   color: var(--text-color);
   outline: none;
 }
@@ -50,7 +50,7 @@
   align-items: center;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: var(--card-bg);
+  background: var(--component-bg);
   cursor: pointer;
   user-select: none;
   font-size: 14px;
@@ -62,7 +62,7 @@
   top: 100%;
   left: 0;
   right: 0;
-  background: var(--card-bg);
+  background: var(--component-bg);
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;

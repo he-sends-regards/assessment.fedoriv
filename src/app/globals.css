@@ -98,18 +98,14 @@ a {
 
 /* Light Theme */
 :root {
-  --header-bg: #ffffff;
-  --header-text: #000000;
-  --card-bg: #ffffff;
+  --component-bg: #ffffff;
   --page-bg: #fafafa;
   --text-color: #000000;
 }
 
 /* Dark Theme */
 .dark {
-  --header-bg: #2b3743;
-  --header-text: #ffffff;
-  --card-bg: #2b3743;
+  --component-bg: #2b3743;
   --page-bg: #202d36;
   --text-color: #ffffff;
 }
