@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
 export const THEME_OPTIONS = { light: "light", dark: "dark" };
 const DEFAULT_THEME_CONTEXT_VALUES = {

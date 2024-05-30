@@ -1,10 +1,12 @@
 import { fetchAllCountries } from "@/services";
-import SearchFilterBar from "../SearchFilterBar";
+import CountriesPage from "../CountriesPage";
 
 const ServerCountryFetcher = async () => {
   const countries = await fetchAllCountries();
 
-  return <SearchFilterBar countries={countries} />;
+  if (!countries) return null;
+
+  return <CountriesPage countries={countries} />;
 };
 
 export default ServerCountryFetcher;
