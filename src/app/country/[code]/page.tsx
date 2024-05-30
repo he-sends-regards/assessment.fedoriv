@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import BackButton from "@/components/BackButton";
-import styles from "./countryDetail.module.css";
+import styles from "./countryPage.module.css";
 import { fetchCountryByCode } from "@/services";
 import { CountryDetails, Loader } from "@/components";
 

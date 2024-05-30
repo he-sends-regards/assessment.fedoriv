@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import styles from "./countryDetail.module.css";
+import styles from "./countryDetails.module.css";
 import { Country } from "@/interfaces";
 
 interface Props {
