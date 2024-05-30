@@ -1,5 +1,7 @@
 .searchFilterBar {
   display: flex;
+  flex-direction: column;
+  gap: 32px;
   justify-content: space-between;
 
   padding: 3rem 2rem;
@@ -7,7 +9,7 @@
 
 .searchInputContainer {
   position: relative;
-  width: 30%;
+  width: 100%;
 }
 
 .searchIcon {
@@ -88,4 +90,14 @@
 
 .rotate {
   transform: rotate(180deg);
+}
+
+@media (min-width: 900px) {
+  .searchFilterBar {
+    flex-direction: row;
+  }
+
+  .searchInputContainer {
+    width: 30%;
+  }
 }
