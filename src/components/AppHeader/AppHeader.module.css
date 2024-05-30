@@ -3,8 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--header-bg);
-  color: var(--header-text);
+  background-color: var(--component-bg);
+  color: var(--text-color);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   height: 70px;
 }

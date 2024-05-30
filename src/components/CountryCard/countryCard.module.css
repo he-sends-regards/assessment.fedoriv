@@ -1,12 +1,19 @@
 .countryCard {
   display: flex;
   flex-direction: column;
-  background-color: var(--card-bg);
+  background-color: var(--component-bg);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   color: var(--text-color);
   width: 320px;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.countryCard:hover,
+.countryCard:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .countryCardImg {
