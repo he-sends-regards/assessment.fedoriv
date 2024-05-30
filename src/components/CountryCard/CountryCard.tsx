@@ -1,7 +1,6 @@
 "use client";
-
-import { Country } from "@/interfaces";
 import React, { FC } from "react";
+import { Country } from "@/interfaces";
 import Image from "next/image";
 import styles from "./countryCard.module.css";
 import { useRouter } from "next/navigation";
@@ -30,7 +29,7 @@ const CountryCard: FC<Props> = ({ country }) => {
       <div className={styles.countryCardContent}>
         <h2 className={styles.countryCardTitle}>{country.name.common}</h2>
         <p className={styles.countryCardText}>
-          <strong>Population:</strong> {country.population}
+          <strong>Population:</strong> {country.population.toLocaleString()}
         </p>
         <p className={styles.countryCardText}>
           <strong>Region:</strong> {country.region}
