@@ -37,6 +37,9 @@
   width: 100%;
   min-height: 20px;
 }
+.detailItem strong {
+  font-weight: 600;
+}
 
 .borderCountries {
   display: flex;
@@ -58,6 +61,9 @@
   border-radius: 5px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: fit-content;
+  cursor: pointer;
+  border: 0;
+  color: var(--text-color);
 }
 
 .borderCountry:hover,
@@ -68,7 +74,8 @@
 
 @media (min-width: 1000px) {
   .detailsGrid {
-    flex-direction: row;
+    flex-direction: column;
+    height: 170px;
   }
 
   .borderCountries {
