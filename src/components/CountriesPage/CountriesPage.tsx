@@ -2,10 +2,10 @@
 
 import React, { FC, memo, useCallback, useState } from "react";
 import { Country } from "../../interfaces/country";
-import { CountriesGrid, SearchFilterBar } from "../";
+import { CountriesGrid, CountriesPageFail, SearchFilterBar } from "../";
 
 interface CountriesPageProps {
-  countries: Country[];
+  countries: Country[] | null;
 }
 
 const CountriesPage: FC<CountriesPageProps> = ({ countries }) => {
@@ -13,12 +13,6 @@ const CountriesPage: FC<CountriesPageProps> = ({ countries }) => {
   const [region, setRegion] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPending, setIsPending] = useState(false);
-
-  const filteredCountries = countries.filter(
-    (country) =>
-      country.name.common.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (region ? country.region === region : true)
-  );
 
   const handleSearchChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,6 +35,16 @@ const CountriesPage: FC<CountriesPageProps> = ({ countries }) => {
   const onFilterDropdownClick = useCallback(() => {
     setIsDropdownOpen((prev) => !prev);
   }, []);
+
+  if (!countries || !countries.length) {
+    return <CountriesPageFail />;
+  }
+
+  const filteredCountries = countries.filter(
+    (country) =>
+      country.name.common.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (region ? country.region === region : true)
+  );
 
   return (
     <div>

@@ -18,9 +18,7 @@ export const metadata = {
 const Home = () => {
   return (
     <div className={styles.homePage}>
-      <div className="search-filter-bar">
-        <ServerCountryFetcher />
-      </div>
+      <ServerCountryFetcher />
     </div>
   );
 };

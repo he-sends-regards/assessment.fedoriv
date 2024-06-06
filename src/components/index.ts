@@ -7,3 +7,4 @@ export { default as BackButton } from "./BackButton";
 export { default as SearchFilterBar } from "./SearchFilterBar";
 export { default as CountryDetails } from "./CountryDetails";
 export { default as CountryNotFound } from "./CountryNotFound";
+export { default as CountriesPageFail } from "./CountriesPageFail";
