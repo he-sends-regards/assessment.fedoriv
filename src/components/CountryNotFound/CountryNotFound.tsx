@@ -8,17 +8,10 @@ import Loader from "../Loader";
 
 const CountryNotFound = () => {
   const router = useRouter();
-  const [isPending, startTransition] = useTransition();
 
   const onReloadBtnClick = () => {
-    startTransition(() => {
-      router.refresh();
-    });
+    router.refresh();
   };
-
-  if (isPending) {
-    return <Loader />;
-  }
 
   return (
     <div className={styles.container}>
