@@ -22,7 +22,7 @@ describe("Country Service API", () => {
       const result = await fetchAllCountries();
       expect(result).toEqual(mockData);
       expect(global.fetch).toHaveBeenCalledWith(
-        "https://restcountries.com/v3.1/all",
+        "http://localhost:8000/countries/all",
         { method: "GET" }
       );
     });
@@ -38,7 +38,7 @@ describe("Country Service API", () => {
       const result = await fetchAllCountries();
       expect(result).toBeNull();
       expect(global.fetch).toHaveBeenCalledWith(
-        "https://restcountries.com/v3.1/all",
+        "http://localhost:8000/countries/all",
         { method: "GET" }
       );
       expect(console.error).toHaveBeenCalledWith(mockError);
@@ -61,7 +61,7 @@ describe("Country Service API", () => {
       const result = await fetchAllCountries();
       expect(result).toBeNull();
       expect(global.fetch).toHaveBeenCalledWith(
-        "https://restcountries.com/v3.1/all",
+        "http://localhost:8000/countries/all",
         { method: "GET" }
       );
 
@@ -71,7 +71,7 @@ describe("Country Service API", () => {
 
   describe("fetchCountryByCode", () => {
     test("fetches data correctly", async () => {
-      const mockData = [{ name: { common: "Country1" } }];
+      const mockData = { name: { common: "Country1" } };
 
       global.fetch = jest.fn(() =>
         Promise.resolve({
@@ -81,9 +81,9 @@ describe("Country Service API", () => {
       ) as jest.Mock;
 
       const result = await fetchCountryByCode("C1");
-      expect(result).toEqual(mockData[0]);
+      expect(result).toEqual(mockData);
       expect(global.fetch).toHaveBeenCalledWith(
-        "https://restcountries.com/v3.1/alpha/C1",
+        "http://localhost:8000/countries/C1",
         { method: "GET" }
       );
     });
@@ -99,7 +99,7 @@ describe("Country Service API", () => {
       const result = await fetchCountryByCode("C1");
       expect(result).toBeNull();
       expect(global.fetch).toHaveBeenCalledWith(
-        "https://restcountries.com/v3.1/alpha/C1",
+        "http://localhost:8000/countries/C1",
         { method: "GET" }
       );
       expect(console.error).toHaveBeenCalledWith(mockError);
@@ -122,7 +122,7 @@ describe("Country Service API", () => {
       const result = await fetchCountryByCode("C1");
       expect(result).toBeNull();
       expect(global.fetch).toHaveBeenCalledWith(
-        "https://restcountries.com/v3.1/alpha/C1",
+        "http://localhost:8000/countries/C1",
         { method: "GET" }
       );
 
