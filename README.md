@@ -20,6 +20,14 @@ npm run dev
 
 This will start the development server. Open your browser and navigate to http://localhost:3000 to see the app in action.
 
+Also I found a problems with restcountries.com service - this project has its own server, that is a demo copy of restcountries.com. To start server locally, run following commands:
+
+```bash
+npm run dev:server
+```
+
+This command will open server folder, install its dependencies, and run a nodejs server
+
 ## Running Unit Tests
 
 To run the unit tests, use the following command:

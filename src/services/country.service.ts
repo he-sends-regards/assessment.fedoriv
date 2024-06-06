@@ -1,6 +1,6 @@
 import { Country } from "@/interfaces";
 
-export const COUNTRIES_BASE_API_URL = "https://restcountries.com/v3.1";
+export const COUNTRIES_BASE_API_URL = "http://localhost:8000/countries"; // "https://restcountries.com/v3.1";
 
 export const fetchAllCountries = async (): Promise<Country[] | null> => {
   try {
@@ -18,10 +18,10 @@ export const fetchCountryByCode = async (
   code: string
 ): Promise<Country | null> => {
   try {
-    const response = await fetch(`${COUNTRIES_BASE_API_URL}/alpha/${code}`, {
+    const response = await fetch(`${COUNTRIES_BASE_API_URL}/${code}`, {
       method: "GET",
     });
-    return (await response.json())[0];
+    return await response.json();
   } catch (error) {
     console.error(error);
     return null;
