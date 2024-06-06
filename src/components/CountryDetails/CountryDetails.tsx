@@ -1,13 +1,22 @@
+"use client";
+
 import React, { FC } from "react";
 import Image from "next/image";
 import styles from "./countryDetails.module.css";
 import { Country } from "@/interfaces";
+import { useRouter } from "next/navigation";
 
 interface Props {
   country: Country;
 }
 
 const CountryDetails: FC<Props> = ({ country }) => {
+  const router = useRouter();
+
+  const onBorderCountryClick = (country: string) => {
+    router.push(`/country/${country}`);
+  };
+
   return (
     <div className={styles.countryDetailsContainer}>
       <div className={styles.flag}>
@@ -25,7 +34,7 @@ const CountryDetails: FC<Props> = ({ country }) => {
         <h1>{country.name.common}</h1>
         <div className={styles.detailsGrid}>
           <p className={styles.detailItem}>
-            <strong>Native Name:</strong>{" "}
+            <strong>Native Name: </strong>
             {Object.values(country.name.nativeName)[0].common}
           </p>
           <p className={styles.detailItem}>
@@ -59,14 +68,14 @@ const CountryDetails: FC<Props> = ({ country }) => {
           <h2>Border Countries:</h2>
 
           <div className={styles.borderCountriesList}>
-            {country.borders?.map((border) => (
-              <a
-                key={border}
-                href={`/country/${border}`}
+            {country.borders?.map((borderCountry) => (
+              <button
+                key={borderCountry}
+                onClick={() => onBorderCountryClick(borderCountry)}
                 className={styles.borderCountry}
               >
-                {border}
-              </a>
+                {borderCountry}
+              </button>
             ))}
           </div>
         </div>
