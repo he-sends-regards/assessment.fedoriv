@@ -24,6 +24,9 @@
 
 .countryCardContent {
   padding: 2rem;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
 }
 
 .countryCardTitle {

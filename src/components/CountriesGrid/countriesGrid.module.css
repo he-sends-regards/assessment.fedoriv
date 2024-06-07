@@ -1,15 +1,15 @@
 .countriesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 0 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
 
 @media (max-width: 1200px) {
   .countriesGrid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
     justify-items: center;
   }
 }
